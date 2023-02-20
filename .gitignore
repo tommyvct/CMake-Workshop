@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+
+.vscode/
+!.vscode/extensions.json
+build/
+install/
