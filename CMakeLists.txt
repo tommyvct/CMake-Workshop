@@ -7,8 +7,6 @@ project(cmake_workshop
     LANGUAGES CXX)
 
 # commandline options:
-# - `-DBUILD_SHARED_LIBS=ON`
-#   this option is used by add_library() to determine whether dynamic or static linkage is used
 # - `-DCMAKE_INSTALL_PREFIX="../install"`
 #   tells CMake where to install our executable.
 
