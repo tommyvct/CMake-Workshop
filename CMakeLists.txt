@@ -12,8 +12,13 @@ project(cmake_workshop
 # - `-DCMAKE_INSTALL_PREFIX="../install"`
 #   tells CMake where to install our executable.
 
-# This can also be specified from THE commandline by `-DREPEAT=7`
-option(REPEAT "How many times to repeat?" 4)
+# This can also be specified from the commandline by `-DREPEAT=7`
+option(REPEAT "How many times to repeat?")
+# if unspecified, REPEAT here will be OFF, which is not a number
+# we have to give a default value here
+if(NOT REPEAT)
+    set(REPEAT 4)
+endif()
 
 # set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -31,7 +36,6 @@ add_executable(hello_world hello.cpp)
 
 # pass compiler definition for this target
 target_compile_definitions(hello_world PRIVATE "REPEAT=${REPEAT}")
-
 # CMake will execute the `CMakeLists.txt` in this directory
 add_subdirectory(some_lib)
 
