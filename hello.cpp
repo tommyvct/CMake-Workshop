@@ -8,6 +8,6 @@
 int main()
 {
     std::cout << "Hello UMIEEE!" << std::endl;
-    std::cout << repeat(REPEAT, std::string("Join UMIEEE!")) << std::endl;
+    std::cout << repeat(REPEAT, "Join UMIEEE!") << std::endl;
     return 0; 
 }

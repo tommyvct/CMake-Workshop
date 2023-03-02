@@ -9,4 +9,4 @@
     #define SOME_LIB_API 
 #endif
 
-SOME_LIB_API std::string repeat(int times, std::string& what);
+SOME_LIB_API std::string repeat(int times, std::string what);

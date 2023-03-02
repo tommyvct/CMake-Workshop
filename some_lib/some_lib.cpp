@@ -1,6 +1,6 @@
 #include "some_lib.hpp"
 
-std::string repeat(int times, std::string& what)
+std::string repeat(int times, std::string what)
 {
     std::string ret;
 
