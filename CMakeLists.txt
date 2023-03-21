@@ -42,5 +42,7 @@ add_subdirectory(some_lib)
 # link the `some_lib` library which we added above, to our `hello_world` executable
 target_link_libraries(hello_world PRIVATE some_lib)
 
+set_target_properties(hello_world PROPERTIES VS_DEBUGGER_ENVIRONMENT "PATH=%PATH%;${CMAKE_CURRENT_BINARY_DIR}")
+
 # tell CMake that we want to copy the built binaries from these targets for install
 install(TARGETS hello_world)

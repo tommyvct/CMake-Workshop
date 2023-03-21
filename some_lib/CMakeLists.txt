@@ -3,7 +3,8 @@ add_library(some_lib some_lib.cpp)
 
 # For Windows DLL
 if(BUILD_SHARED_LIBS AND WIN32)
-    target_compile_definitions(some_lib PRIVATE SOME_LIB_EXPORT)
+    target_compile_definitions(some_lib PUBLIC SOME_LIB_DLL)
+    target_compile_definitions(some_lib PRIVATE SOME_LIB_COMPILE)
 endif()
 
 # where to find the headers of this lib
