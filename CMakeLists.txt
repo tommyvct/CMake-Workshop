@@ -12,13 +12,12 @@ project(cmake_workshop
 # - `-DCMAKE_INSTALL_PREFIX="../install"`
 #   tells CMake where to install our executable.
 
-# This can also be specified from the commandline by `-DREPEAT=7`
-option(REPEAT "How many times to repeat?")
-# if unspecified, REPEAT here will be OFF, which is not a number
-# we have to give a default value here
-if(NOT REPEAT)
-    set(REPEAT 4)
-endif()
+# this can also be specified from the commandline by `-DREPEAT=7`
+set(REPEAT 4 CACHE STRING "How many times to repeat?")
+# there is a shortcut for a cache bool variable
+option(SAY_BYE "Print something before exit" ON)
+# equvalent to set(SAY_BYE ON CACHE BOOL "Print something before exit")
+# the default value is OFF, if ON is not specified in the end
 
 # set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -36,6 +35,9 @@ add_executable(hello_world hello.cpp)
 
 # pass compiler definition for this target
 target_compile_definitions(hello_world PRIVATE "REPEAT=${REPEAT}")
+if(SAY_BYE)
+    target_compile_definitions(hello_world PRIVATE "SAY_BYE")
+endif()
 # CMake will execute the `CMakeLists.txt` in this directory
 add_subdirectory(some_lib)
 

@@ -9,5 +9,10 @@ int main()
 {
     std::cout << "Hello UMIEEE!" << std::endl;
     std::cout << repeat(REPEAT, "Join UMIEEE!") << std::endl;
+
+    #ifdef SAY_BYE
+        std::cout << "Bye!" << std::endl;
+    #endif
+    
     return 0; 
 }
